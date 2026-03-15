@@ -1,0 +1,279 @@
+/* ---- Contact — Green & Gold ---- */
+.contact {
+  padding: 4rem 0;
+  background: linear-gradient(180deg, rgba(220, 252, 231, 0.3) 0%, var(--cream) 100%);
+}
+
+.contact .section-heading {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.contact.visible .section-heading {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contact__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.contact__panel {
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  padding: 2rem 1.5rem;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid rgba(26, 92, 60, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+.contact.visible .contact__panel {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.15s;
+}
+
+.contact__panel:hover {
+  box-shadow: var(--shadow-gold);
+  border-color: rgba(212, 175, 55, 0.2);
+  transform: translateY(-4px);
+}
+
+.contact__panel h3 {
+  color: var(--green-800);
+  font-size: 1.3rem;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.contact__addresses {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.contact__address {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  background: var(--green-50);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  transition: all var(--transition-base);
+  min-height: 48px;
+}
+
+.contact__address:hover {
+  background: var(--gold-50);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-sm);
+  border-color: rgba(212, 175, 55, 0.3);
+}
+
+.contact__address-icon {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(135deg, var(--green-600), var(--green-700));
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+  box-shadow: 0 2px 8px rgba(26, 92, 60, 0.25);
+}
+
+.contact__address-label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--green-700);
+  margin-bottom: 0.2rem;
+}
+
+.contact__address-text {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.contact__map-link {
+  background: linear-gradient(135deg, var(--green-800), var(--green-700));
+  border-radius: var(--radius-md);
+  padding: 1rem 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(26, 92, 60, 0.25);
+  transition: box-shadow 0.3s ease;
+}
+
+.contact__map-link:hover {
+  box-shadow: 0 6px 24px rgba(212, 175, 55, 0.2);
+}
+
+.contact__map-link a {
+  color: var(--white);
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: opacity var(--transition-fast);
+}
+
+.contact__map-link a:hover {
+  opacity: 0.9;
+}
+
+.contact__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.contact__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, var(--green-50), var(--gold-50));
+  color: var(--green-700);
+  font-size: 0.8rem;
+  font-weight: 500;
+  border: 1px solid rgba(212, 175, 55, 0.25);
+}
+
+.contact__cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact__card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.25rem;
+  border-radius: var(--radius-lg);
+  background: var(--white);
+  border: 1px solid rgba(26, 92, 60, 0.1);
+  box-shadow: var(--shadow-sm);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+  min-height: 48px;
+}
+.contact.visible .contact__card:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 0.25s; }
+.contact.visible .contact__card:nth-child(2) { opacity: 1; transform: translateY(0); transition-delay: 0.35s; }
+.contact.visible .contact__card:nth-child(3) { opacity: 1; transform: translateY(0); transition-delay: 0.45s; }
+
+.contact__card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-gold);
+  border-color: rgba(212, 175, 55, 0.2);
+}
+
+.contact__card-icon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact__card-icon--phone {
+  background: rgba(26, 92, 60, 0.12);
+  color: var(--green-600);
+}
+
+.contact__card-icon--email {
+  background: rgba(26, 92, 60, 0.08);
+  color: var(--green-700);
+}
+
+.contact__card-icon--whatsapp {
+  background: rgba(37, 211, 102, 0.12);
+  color: #25d366;
+}
+
+.contact__card-label {
+  display: block;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  margin-bottom: 0.15rem;
+}
+
+.contact__card-value {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.contact__card-meta {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 0.2rem;
+}
+
+@media (min-width: 640px) {
+  .contact {
+    padding: 5rem 0;
+  }
+
+  .contact__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .contact__card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .contact__grid {
+    grid-template-columns: 5fr 7fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .contact__panel {
+    padding: 2.5rem;
+  }
+
+  .contact__cards {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .contact__cards .contact__card:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .contact__card {
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+  }
+}
